@@ -1,0 +1,5 @@
+.zsh_history
+.zsh_sessions
+zsh-history-substring-search
+zsh-syntax-highlighting
+awsrc.zsh
