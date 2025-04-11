@@ -4,17 +4,53 @@
 [alias]
 	ci = commit -v
 	co = checkout
+  
+# clearly makes git better
+
 [color]
 	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+  sort = version:refname
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+
+# why the hell not?
+
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[rerere]
+  enabled = true
+  autoupdate = true
 [core]
-	excludesfile = ~/.gitignore
-	autocrlf = input
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+
+# a matter of taste 
+
+[pull]
+  rebase = true
 [apply]
 	whitespace = nowarn
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[pull]
-	rebase = true
-[rebase]
-	autosquash = true
-	autostash = true
