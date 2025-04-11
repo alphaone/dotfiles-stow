@@ -1,0 +1,7 @@
+theme = catppuccin-macchiato
+cursor-invert-fg-bg=true
+# cursor-color = #FFFFFF
+# cursor-text = #000000
+font-size = 16
+window-decoration = false
+macos-option-as-alt = left
