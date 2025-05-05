@@ -13,5 +13,7 @@ window.update_config(config)
 font.update_config(config)
 
 config.color_scheme = "Catppuccin Frappe"
+config.max_fps = 120
+config.animation_fps = 120
 
 return config
