@@ -54,3 +54,7 @@
 	whitespace = nowarn
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+
+# Gipedo
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
