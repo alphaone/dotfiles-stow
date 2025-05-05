@@ -14,12 +14,13 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 
 # go
 export GOPATH="$HOME/code/go"
+export PATH="$GOPATH/bin:$PATH"
 
 # python / miniconda
 export PATH="/Users/tmangner/miniconda3/bin:$PATH"
 
-# cargo
-. "$HOME/.cargo/env"
+# libpq (postgres client / pg_dump)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # bob / neovim version manager
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"

@@ -1,22 +1,10 @@
 # LISTING
 alias ls='ls -h --color --time-style=long-iso'
-alias l='ls -l'
-alias ll='ls -lA'
-alias lt='ls -lt'
+alias l='eza --long --git --no-user --no-permissions --no-quotes --icons=always'
+alias ll='eza --long --all --git --no-quotes --icons=always'
+alias lm='ll --sort=modified'
+alias lt='ll --tree --level=3'
 
-
-# GIT
-# even though the git plugin of oh-my-zsh brings these, i have to tweak them:
-alias gup='git smart-pull'
-alias gm='git smart-merge'
-alias gl='git smart-log'
-alias gp='git push'
-alias gpf='git push --force'
-alias gst='git status'
-alias gss='git status --short'
-alias gco='git checkout'
-alias gcm='gco $(git_main_branch)'
-alias gfrm='git fetch && git rebase $(git_main_branch)'
 
 alias grep="ggrep"
 
@@ -26,7 +14,7 @@ alias be='bundle exec'
 
 # DOCKER
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # TERRAFORM
 alias tf='terraform'
@@ -44,3 +32,4 @@ alias yu='yarn upgrade-interactive --latest'
 
 # GOLANG
 alias air='$(go env GOPATH)/bin/air'
+
