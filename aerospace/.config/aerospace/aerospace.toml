@@ -210,6 +210,14 @@ if.app-id = 'com.duckduckgo.macos.browser'
 run = 'move-node-to-workspace B' # mnemonics B - Browser
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Chrome'
+run = 'move-node-to-workspace B' # mnemonics B - Browser
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace B' # mnemonics B - Browser
+
+[[on-window-detected]]
 if.app-id = 'com.apple.iCal'
 run = 'move-node-to-workspace C' # mnemonics C - Calendar
 
