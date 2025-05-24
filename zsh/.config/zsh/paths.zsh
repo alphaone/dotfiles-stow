@@ -25,3 +25,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # bob / neovim version manager
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
