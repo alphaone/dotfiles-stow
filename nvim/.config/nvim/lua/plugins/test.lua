@@ -1,62 +1,14 @@
+vim.cmd([[
+  let g:test#strategy = "vimux"
+  let g:test#javascript#vitest#executable = "yarn test --no-coverage"
+]])
+
 return {
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "antoinemadec/FixCursorHold.nvim",
-      "haydenmeade/neotest-jest",
-    },
-    config = function()
-      require("neotest").setup({
-        adapters = {
-          require("neotest-jest")({
-            jestCommand = "yarn test --",
-            -- jestConfigFile = "custom.jest.config.ts",
-            -- env = { CI = true },
-            -- cwd = function(path)
-            --   return vim.fn.getcwd()
-            -- end,
-          }),
-        },
-      })
-    end,
-    keys = {
-      {
-        "<leader>tt",
-        function()
-          require("neotest").run.run()
-        end,
-        desc = "Neotest run test under cursor",
-      },
-      {
-        "<leader>tf",
-        function()
-          require("neotest").run.run(vim.fn.expand("%"))
-        end,
-        desc = "Neotest run file",
-      },
-      {
-        "<leader>to",
-        function()
-          require("neotest").output_panel.toggle()
-        end,
-        desc = "Neotest toggle output panel",
-      },
-      {
-        "<leader>tw",
-        function()
-          require("neotest").output.open()
-        end,
-        desc = "Neotest open output window",
-      },
-      {
-        "<leader>ts",
-        function()
-          require("neotest").summary.toggle()
-        end,
-        desc = "Neotest toggle summary",
-      },
-    },
+  "vim-test/vim-test",
+  dependencies = { "preservim/vimux" },
+  keys = {
+    { "<leader>tt", "<cmd>TestNearest<cr>", desc = "Run nearest test" },
+    { "<leader>tT", "<cmd>TestFile<cr>", desc = "Run all tests in file" },
+    { "<leader>tl", "<cmd>TestLast<cr>", desc = "Run last test" },
   },
 }

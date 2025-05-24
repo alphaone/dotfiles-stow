@@ -11,3 +11,11 @@ opt.clipboard = "unnamedplus" -- use "unnamedplus" to enable system clipboard
 opt.swapfile = false
 
 opt.shada = "!,'1000,f1,<50,s10,h"
+
+vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
+})
