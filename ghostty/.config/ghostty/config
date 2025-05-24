@@ -5,3 +5,4 @@ cursor-invert-fg-bg=true
 font-size = 15
 window-decoration = false
 macos-option-as-alt = left
+copy-on-select = clipboard
