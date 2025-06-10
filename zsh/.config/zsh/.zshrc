@@ -1,5 +1,6 @@
 eval "$(starship init zsh)"
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='nvim'
 
 source $ZDOTDIR/functions.zsh

@@ -1,0 +1,9 @@
+customCommands:
+  - key: "F"
+    context: "localBranches"
+    command: "git fetch --all --tags --force"
+    description: "Forcs fetch all tags"
+    prompts:
+      - type: "confirm"
+        title: "Force Fetch"
+        body: "Are you sure you want to force fetch all tags?"
