@@ -7,3 +7,7 @@ customCommands:
       - type: "confirm"
         title: "Force Fetch"
         body: "Are you sure you want to force fetch all tags?"
+git:
+  paging:
+    colorArg: always
+    pager: diff-so-fancy
