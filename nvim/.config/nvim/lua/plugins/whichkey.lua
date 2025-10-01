@@ -3,6 +3,7 @@ return {
   opts = {
     spec = {
       { "<leader>t", group = "test" },
+      { "<leader>C", group = "code coverage" },
     },
   },
 }
