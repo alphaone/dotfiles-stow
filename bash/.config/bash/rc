@@ -1,0 +1,5 @@
+source $XDG_CONFIG_HOME/bash/shell
+source $XDG_CONFIG_HOME/bash/aliases
+source $XDG_CONFIG_HOME/bash/init
+
+[[ $- == *i* ]] && bind -f $XDG_CONFIG_HOME/bash/inputrc
