@@ -1,0 +1,152 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": -10,
+  "spacing": 0,
+  "modules-left": ["hyprland/workspaces", "custom/pomodoro"],
+
+  "modules-center": ["hyprland/window"],
+
+  "modules-right": [
+    "memory",
+    "cpu",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "backlight",
+    // "battery",
+    "clock",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+    },
+  },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-on": "{icon}",
+    "format-off": "{icon}",
+    "format-connected": "{icon}",
+    "format-icons": {
+      "on": "󰂯",
+      "off": "󰂲",
+      "connected": "󰂱",
+    },
+    "on-click": "$TERMINAL -e bluetui",
+    // "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format": "Devices connected: {num_connections}",
+  },
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50,
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "{:L%A %H:%M}",
+    "format-alt": "{:L%d %B W%V %Y}",
+  },
+
+  "network": {
+    "format-wifi": "󰤢",
+    "format-disconnected": "󰤠 ",
+    "format-ethernet": "{bandwidthDownBytes:>5}⇣ 󰈀  ⇡{bandwidthUpBytes:<5}",
+    "interval": 3,
+    // "tooltip-format": "{essid} ({signalStrength}%)",
+    // "tooltip-format": "{ifname}\t{ipaddr}/{cidr}\ngateway\t{gwaddr}",
+    "tooltip-format": "{ifname}\t{ipaddr}/{cidr}\ngateway\t{gwaddr}\n\t{essid}\n{icon}  ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "on-click": "nm-connection-editor",
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "ghostty -e btop",
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": " {: >3}%",
+    "format-alt": " {used:0.1f}G/{total:0.1f}G",
+    "tooltip": "Memory",
+  },
+
+  "custom/uptime": {
+    "format": "{}",
+    "format-icon": [""],
+    "tooltip": false,
+    "interval": 1600,
+    "exec": "$HOME/.config/waybar/scripts/uptime.sh",
+  },
+
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": ["", "󰃜", "󰃛", "󰃞", "󰃝", "󰃟", "󰃠"],
+    "tooltip": false,
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "],
+    },
+    "on-click": "pavucontrol",
+  },
+
+  "battery": {
+    "interval": 2,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
+    "format": "",
+  },
+
+  "custom/pomodoro": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro --no-work-icons",
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-right": "waybar-module-pomodoro reset",
+  },
+}
