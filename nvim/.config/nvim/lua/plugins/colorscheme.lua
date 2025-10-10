@@ -1,7 +1,6 @@
 return {
   {
     "folke/tokyonight.nvim",
-    enabled = false,
   },
   {
     "catppuccin/nvim",
@@ -9,7 +8,7 @@ return {
     priority = 1000,
     opts = {
       flavour = "macchiato", -- latte, frappe, macchiato, mocha
-      background = { -- :h background
+      background = {
         light = "latte",
         dark = "macchiato",
       },
@@ -19,7 +18,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
     },
   },
 }
