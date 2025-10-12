@@ -1,0 +1,25 @@
+# Copied from folke/tokionight.nvim
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/dunst/tokyonight_night.dunstrc
+
+[global]    
+    corners = all
+    corner_radius = 6
+    frame_width = 1
+    font = JetBrainsMonoNL Nerd Font Mono 10
+
+# TokyoNight colors for dunst
+# For more configuration options see https://github.com/dunst-project/dunst/blob/master/dunstrc
+[urgency_low]
+    background = "#16161e40"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf540"
+
+[urgency_normal]
+    background = "#1a1b2640"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf540"
+
+[urgency_critical]
+    background = "#292e4240"
+    foreground = "#db4b4b"
+    frame_color = "#db4b4b40"
