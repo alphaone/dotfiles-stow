@@ -1,0 +1,6 @@
+#!/bin/bash
+
+gh search prs --author=@me --state=open |
+  fzf |
+  awk '{print "https://github.com/"$1"/pull/"$2}' |
+  xargs -I {} xdg-open {}

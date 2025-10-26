@@ -1,0 +1,8 @@
+#!/bin/bash
+
+OWNER="${1:alphaone}"
+
+gh repo list --source --no-archived --limit=100 $OWNER |
+  fzf |
+  awk '{print "https://github.com/"$1}' |
+  xargs -I {} xdg-open {}
