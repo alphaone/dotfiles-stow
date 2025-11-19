@@ -1,8 +1,8 @@
 customCommands:
   - key: "F"
     context: "localBranches"
-    command: "git fetch --all --tags --force"
-    description: "Forcs fetch all tags"
+    command: "git fetch --all --tags --force && git pull"
+    description: "Force fetch all tags"
     prompts:
       - type: "confirm"
         title: "Force Fetch"

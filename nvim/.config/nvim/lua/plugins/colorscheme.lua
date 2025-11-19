@@ -2,6 +2,8 @@ return {
   {
     "folke/tokyonight.nvim",
   },
+  { "projekt0n/github-nvim-theme", name = "github-theme" },
+  { "ramojus/mellifluous.nvim" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -14,11 +16,16 @@ return {
       },
     },
   },
-
+  {
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "github_light_default",
     },
   },
 }
