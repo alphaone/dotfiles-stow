@@ -1,8 +1,5 @@
 return {
-  {
-    -- let's you explicitly close open brackets, quotes, etc. (C-j)
-    "dhruvasagar/vim-pairify",
-  },
+  -- don't match pairs, it's just annoying
   {
     "nvim-mini/mini.pairs",
     enabled = false,

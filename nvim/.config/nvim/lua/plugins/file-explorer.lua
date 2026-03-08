@@ -17,10 +17,10 @@ return {
         "<leader>e",
         function()
           local buf = vim.api.nvim_buf_get_name(0)
-          if vim.loop.fs_stat(buf) then
+          if vim.uv.fs_stat(buf) then
             require("mini.files").open(buf, true)
           else
-            require("mini.files").open(vim.loop.cwd(), true)
+            require("mini.files").open(vim.uv.cwd(), true)
           end
         end,
         desc = "Open mini.files (directory of current file)",
@@ -28,7 +28,7 @@ return {
       {
         "<leader>E",
         function()
-          require("mini.files").open(vim.loop.cwd(), true)
+          require("mini.files").open(vim.uv.cwd(), true)
         end,
         desc = "Open mini.files (cwd)",
       },
