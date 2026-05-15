@@ -4,7 +4,7 @@ return {
   keys = {
     -- reverse fr and fR for me
     { "<leader>fR", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
-    { "<leader>fr", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
+    { "<leader>fr", "<cmd>FzfLua oldfiles cwd_only=true include_current_session=true<cr>", desc = "Recent (cwd)" },
     {
       "<leader>ss",
       function()
